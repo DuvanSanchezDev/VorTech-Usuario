@@ -1,0 +1,12 @@
+# Directio de entorno virtual 
+venv/
+.venv/
+
+# Archivo .env
+.env
+
+# cache de python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
