@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from models.registrar_modelos import RegistrarUsuario, RegistrarInformacionUsuario
+from models.usuario import RegistrarUsuario, RegistrarInformacionUsuario
 from services.registrar_usuario import registrar_usuario_supabase, registrar_informacion_usuario_supabase
 
 router = APIRouter(

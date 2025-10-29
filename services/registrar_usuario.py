@@ -1,5 +1,5 @@
 from fastapi import HTTPException
-from models.registrar_modelos import RegistrarUsuario, RegistrarInformacionUsuario
+from models.usuario import RegistrarUsuario, RegistrarInformacionUsuario
 from security import hasheo_contrasenas
 import os
 from supabase import client, create_client
