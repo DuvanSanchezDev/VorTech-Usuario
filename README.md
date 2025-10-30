@@ -208,6 +208,9 @@ VorTech-Usuario/
 - Validación de entradas para prevenir inyecciones
 - Los usuarios solo pueden acceder y modificar su propia información
 - CORS habilitado para controlar accesos
+- **Rate limiting**: Protección contra ataques de fuerza bruta y DoS
+  - Login/Registro: máximo 5 intentos cada 15 minutos
+  - Otras operaciones: máximo 100 solicitudes cada 15 minutos
 
 ## 🛡️ Validaciones
 

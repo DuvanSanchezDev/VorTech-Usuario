@@ -15,15 +15,16 @@ const {
   validateUpdate,
   handleValidationErrors
 } = require('../middleware/validation');
+const { authLimiter, generalLimiter } = require('../middleware/rateLimiter');
 
-// Rutas públicas
-router.post('/register', validateRegistration, handleValidationErrors, register);
-router.post('/login', validateLogin, handleValidationErrors, login);
+// Rutas públicas con rate limiting estricto
+router.post('/register', authLimiter, validateRegistration, handleValidationErrors, register);
+router.post('/login', authLimiter, validateLogin, handleValidationErrors, login);
 
-// Rutas protegidas (requieren autenticación)
-router.get('/profile', authenticateToken, getProfile);
-router.get('/:id', authenticateToken, getUserById);
-router.put('/:id', authenticateToken, validateUpdate, handleValidationErrors, updateUser);
-router.delete('/:id', authenticateToken, deleteUser);
+// Rutas protegidas (requieren autenticación) con rate limiting general
+router.get('/profile', generalLimiter, authenticateToken, getProfile);
+router.get('/:id', generalLimiter, authenticateToken, getUserById);
+router.put('/:id', generalLimiter, authenticateToken, validateUpdate, handleValidationErrors, updateUser);
+router.delete('/:id', generalLimiter, authenticateToken, deleteUser);
 
 module.exports = router;
