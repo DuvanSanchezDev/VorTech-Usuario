@@ -5,18 +5,18 @@ import os
 from supabase import client, create_client
 from dotenv import load_dotenv
 
-##############################################################################################################################
-# Recuperar variables de entorno para supabase y generar conexión a la base de datos
-##############################################################################################################################
+
+#---Recuperar variables de entorno para supabase y generar conexión a la base de datos---
+
 load_dotenv()
 
 URL: str = os.getenv("URL")
 KEY: str = os.getenv("KEY")
 supabase : client = create_client(URL, KEY)
 
-##############################################################################################################################
-# Registrar usuario e información adicional del usuario
-##############################################################################################################################
+
+#---Registrar usuario e información adicional del usuario---
+
 
 async def registrar_usuario_supabase(usuario: RegistrarUsuario) -> dict: 
     """
