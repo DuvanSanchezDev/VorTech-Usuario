@@ -68,3 +68,11 @@ class ActualizarInformacionUsuario(BaseModel):
     barrio : str 
     descripcion : str 
     codigo_postal : str
+
+###############################################################################################################################
+# Eliminar usuario
+###############################################################################################################################
+
+#---Modelo para eliminar usuario---
+class EliminarUsuario(BaseModel):
+    contrasena : str 

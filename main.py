@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import registrar_ruta, autenticar_ruta, actualizar_ruta
+from routers import registrar_ruta, autenticar_ruta, actualizar_ruta, eliminar_ruta
 
 app = FastAPI(
     title="Servicio Usuario",
@@ -13,6 +13,7 @@ app = FastAPI(
 app.include_router(registrar_ruta.router)
 app.include_router(autenticar_ruta.router)
 app.include_router(actualizar_ruta.router)
+app.include_router(eliminar_ruta.router)
 
 @app.get("/")
 async def leer_raiz(): 
